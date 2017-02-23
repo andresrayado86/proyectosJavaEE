@@ -12,18 +12,26 @@ import beans.dominio.Persona;
 public class ClienteEntidadPersona {
 	public static void main(String[] args) {
 		Logger log = Logger.getLogger("PruebaClienteEntidadPersona");
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("PersonaPU");
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("PersonaPU");
+		
 		EntityManager em = emf.createEntityManager();
+		
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
-		//No se debe especificar el ID, ya que se genera en automático
-		Persona persona1 = new Persona("Hola", "Perez", "Larios",
-				"hola@mail.com.mx", "55780109");
+		
+		// No se debe especificar el ID, ya que se genera en automático
+		Persona persona1 = new Persona("Pepito", "Gomez", "Larios", "pepito@mail.com.mx", "55780109");
+		
 		log.debug("Objeto a persistir:" + persona1);
+		
 		em.persist(persona1);
+		
 		tx.commit();
+		
 		log.debug("Objeto persistido:" + persona1);
+		
 		em.close();
 	}
 }

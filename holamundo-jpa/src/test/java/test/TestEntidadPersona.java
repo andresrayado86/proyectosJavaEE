@@ -46,8 +46,8 @@ public class TestEntidadPersona {
 		tx.begin();
 
 		// No se debe especificar el ID, ya que se genera en automático
-		Persona persona1 = new Persona("Angelica", "Lara", "Gomez",
-				"alara@mail.com3", "1314145519");
+		Persona persona1 = new Persona("Sandra", "Loera", "Gomez",
+				"sandra@mail.com3", "1314145519");
 
 		log.debug("Objeto a persistir:" + persona1);
 		em.persist(persona1);
