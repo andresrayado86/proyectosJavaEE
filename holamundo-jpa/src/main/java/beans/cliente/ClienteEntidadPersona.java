@@ -18,8 +18,8 @@ public class ClienteEntidadPersona {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		//No se debe especificar el ID, ya que se genera en automático
-		Persona persona1 = new Persona("Hola", "Gomez", "Larios",
-				"ogomez@mail.com.mx", "55780109");
+		Persona persona1 = new Persona("Hola", "Perez", "Larios",
+				"hola@mail.com.mx", "55780109");
 		log.debug("Objeto a persistir:" + persona1);
 		em.persist(persona1);
 		tx.commit();
