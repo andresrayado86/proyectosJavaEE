@@ -27,7 +27,7 @@ public class PersonaServiceTest {
 	public void testEJBPersonaService() {
 		System.out.println("Iniciando test EJB PersonaService");
 		assertTrue(personaService != null);
-		assertEquals(6, personaService.listarPersonas().size());
+		assertEquals(7, personaService.listarPersonas().size());
 		System.out.println("El no. de personas es igual a:"
 				+ personaService.listarPersonas().size());
 		this.desplegarPersonas(personaService.listarPersonas());
