@@ -7,6 +7,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import mx.com.andres.sga.domain.Persona;
+import mx.com.andres.sga.domain.Usuario;
 
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -69,20 +70,46 @@ public class TestARealizarObjeto {
 //		log.debug("Se ha guardado en la base de datos el siguiente registro de persona: " + persona);
 //	}
 	
+	/* Metodo para la modificación de un objeto recuperado de la base de datos
+	 * 
+	 * 
+	 * */
+	
+//	@Test
+//	public void eliminarRegistroPersona() {
+//		EntityTransaction tx = em.getTransaction();
+//		log.debug("Iniciando la transaccion para eliminar persona");
+//		tx.begin();
+//		Persona persona = em.find(Persona.class, 3);
+//		tx.commit();
+//		log.debug("Se ha recuperado la persona: " + persona);
+//		persona.setApeMaterno("Colorina");
+//		EntityTransaction tx2 = em.getTransaction();
+//		tx2.begin();
+//		em.merge(persona);
+//		tx2.commit();
+//		log.debug("Se ha realizado el cambio correctamente" + persona);
+//	}
+	
+	/**
+	 * Motodo para la insersion de dos objetos que tienen configuracion de guardado en cascada
+	 */
+	
 	@Test
-	public void eliminarRegistroPersona() {
+	public void testPersistenciaCascada(){
 		EntityTransaction tx = em.getTransaction();
-		log.debug("Iniciando la transaccion para eliminar persona");
+		log.debug("Se inicia la insercion de una persona y un usuario a la base de datos...");
 		tx.begin();
-		Persona persona = em.find(Persona.class, 3);
+		
+		Persona persona = new Persona("Miguel", "Loera", "Cerda", "Miguel@hotmail.com", "811890909");
+		
+		Usuario usuario = new Usuario("mloera1234", "1234565", persona);
+		
+		em.persist(usuario);
+		
 		tx.commit();
-		log.debug("Se ha recuperado la persona: " + persona);
-		persona.setApeMaterno("Colorina");
-		EntityTransaction tx2 = em.getTransaction();
-		tx2.begin();
-		em.merge(persona);
-		tx2.commit();
-		log.debug("Se ha realizado el cambio correctamente" + persona);
+		
+		log.debug("Se han registrado correctamente los objetos en cascada: " + usuario + " " + persona);
 	}
 	
 	
