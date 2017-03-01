@@ -11,7 +11,6 @@ import mx.com.andres.sga.domain.Usuario;
 import mx.com.andres.sga.servicio.UsuarioService;
 
 import org.junit.Before;
-import org.junit.Test;
 
 public class UsuarioServiceTest {
 	private UsuarioService usuarioService;
@@ -24,7 +23,7 @@ public class UsuarioServiceTest {
 				.lookup("java:global/classes/UsuarioServiceImpl!mx.com.andres.sga.servicio.UsuarioService");
 	}
 
-	@Test
+//	@Test
 	public void testEJBUsuarioService() {
 		System.out.println("Iniciando test EJB UsuarioService");
 		assertTrue(usuarioService != null);

@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class TestARealizarObjeto {
 	
@@ -95,7 +94,7 @@ public class TestARealizarObjeto {
 	 * Motodo para la insersion de dos objetos que tienen configuracion de guardado en cascada
 	 */
 	
-	@Test
+//	@Test
 	public void testPersistenciaCascada(){
 		EntityTransaction tx = em.getTransaction();
 		log.debug("Se inicia la insercion de una persona y un usuario a la base de datos...");

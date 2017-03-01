@@ -1,16 +1,16 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import javax.ejb.embeddable.EJBContainer;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import mx.com.andres.sga.domain.Persona;
 import mx.com.andres.sga.servicio.PersonaService;
+
+import org.junit.Before;
 
 public class PersonaServiceTest {
 	private PersonaService personaService;
@@ -23,7 +23,7 @@ public class PersonaServiceTest {
 				.lookup("java:global/classes/PersonaServiceImpl!mx.com.andres.sga.servicio.PersonaService");
 	}
 
-	@Test
+//	@Test
 	public void testEJBPersonaService() {
 		System.out.println("Iniciando test EJB PersonaService");
 		assertTrue(personaService != null);
